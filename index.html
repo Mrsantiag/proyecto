@@ -2,169 +2,25 @@
 <html lang="es">
 <head>
     <meta charset="UTF-8">
-    <title>Ejercicio Final Bloque 1</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Catálogo de Productos Musicales</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Barlow:wght@400;600;700&display=swap" rel="stylesheet">
 </head>
 <body>
 
-<!-- Barra de navegación principal -->
-<nav>
-    <ul>
-        <li><a href="index.html">Inicio</a></li>
-        <li><a href="tabla.html">Catálogo</a></li>
-        <li><a href="multimedia.html">Multimedia</a></li>
-        <li><a href="formulario.html">Formulario</a></li>
-        <li><a href="">Contacto</a></li>
-    </ul>
+<!-- Navbar: generado desde JS -->
+<nav id="navbar">
+    <div class="nav-brand">🎵 MUSICSTORE</div>
+    <ul id="nav-links"></ul>
 </nav>
 
-<hr>
+<!-- Contenido principal: todo inyectado desde JS -->
+<main id="main-content"></main>
 
-<!-- Tabla de inventario con rowspan, colspan, thead, tbody y tfoot -->
-<h1>Catálogo de Productos Musicales</h1>
+<!-- Footer: generado desde JS -->
+<footer id="footer"></footer>
 
-<table border="1" cellpadding="8" cellspacing="0" width="700">
-    <caption>Inventario disponible — Temporada 2025</caption>
-    <thead>
-    <tr>
-        <th>ID</th>
-        <th>Producto</th>
-        <th>Categoría</th>
-        <th>Precio (€)</th>
-        <th>Stock</th>
-        <th>Disponible</th>
-    </tr>
-    </thead>
-    <tbody>
-    <tr>
-        <td>001</td>
-        <td>Guitarra acústica Yamaha F310</td>
-        <td rowspan="3">Instrumentos</td>
-        <td>129.99</td>
-        <td>15</td>
-        <td>Sí</td>
-    </tr>
-    <tr>
-        <td>002</td>
-        <td>Teclado Casio CT-S300</td>
-        <td>69.99</td>
-        <td>8</td>
-        <td>Sí</td>
-    </tr>
-    <tr>
-        <td>003</td>
-        <td>Batería electrónica Roland TD-1K</td>
-        <td>499.00</td>
-        <td>3</td>
-        <td>Sí</td>
-    </tr>
-    <tr>
-        <td>004</td>
-        <td>Cable XLR 3m</td>
-        <td rowspan="2">Accesorios</td>
-        <td>9.99</td>
-        <td>50</td>
-        <td>Sí</td>
-    </tr>
-    <tr>
-        <td>005</td>
-        <td>Soporte de micrófono de pie</td>
-        <td>24.50</td>
-        <td>0</td>
-        <td>No</td>
-    </tr>
-    <tr>
-        <td>006</td>
-        <td>Auriculares Sony MDR-ZX110</td>
-        <td>Audio</td>
-        <td>19.99</td>
-        <td>22</td>
-        <td>Sí</td>
-    </tr>
-    </tbody>
-    <tfoot>
-    <tr>
-        <td colspan="3">Total de referencias: 6</td>
-        <td>753.46</td>
-        <td>98</td>
-        <td>5 / 6</td>
-    </tr>
-    </tfoot>
-</table>
-
-<hr>
-
-<!-- Video incrustado desde YouTube como elemento externo -->
-<h2>Video del artista</h2>
-<iframe
-        width="640"
-        height="360"
-        src="https://www.youtube.com/embed/fcnjrGeCc84"
-        title="Video musical incrustado desde YouTube"
-        allowfullscreen>
-</iframe>
-
-<br><br>
-
-<!-- Elemento multimedia: audio nativo HTML5 -->
-<h2>Reproductor de audio</h2>
-<audio controls loop preload="metadata">
-    <source src="audio/muestra.mp3" type="audio/mpeg">
-    <source src="audio/muestra.ogg" type="audio/ogg">
-    Tu navegador no soporta audio HTML5.
-</audio>
-
-<br><br>
-
-<!-- Imagen como elemento multimedia adicional -->
-<h2>Imagen del producto</h2>
-<img
-        src="https://www.porthos.com.co/web/image/411194-fdba897f/EXTENSIONES%20TEL-03.png"
-        alt="Porthos extensiones telefónicas"
-        width="400"
-        title="Porthos - Soluciones de telecomunicaciones">
-
-<hr>
-
-<!-- Formulario de información del producto -->
-<h2>Información sobre el producto</h2>
-<form action="procesar.php" method="post" enctype="multipart/form-data">
-    <fieldset>
-        <legend>Datos básicos</legend>
-        <div class="campo">
-            Nombre<br>
-            <input type="text" name="nombre" size="60" maxlength="100">
-        </div>
-        <div class="campo">
-            Descripción<br>
-            <textarea name="descripcion" cols="60" rows="8"></textarea>
-        </div>
-        <div class="campo">
-            Foto <input type="file" name="foto">
-        </div>
-        <div class="campo">
-            <input type="checkbox" name="contador" value="si"> Añadir contador de visitas
-        </div>
-    </fieldset>
-    <fieldset>
-        <legend>Datos económicos</legend>
-        <div class="campo">
-            Precio <input type="text" name="precio" size="10"> €
-            &nbsp;&nbsp;&nbsp; Impuestos
-            <select name="impuestos">
-                <option value="4">4%</option>
-                <option value="10">10%</option>
-                <option value="21">21%</option>
-            </select>
-        </div>
-        <div class="campo">
-            Promoción<br>
-            <input type="radio" name="promocion" value="ninguno" checked> Ninguno<br>
-            <input type="radio" name="promocion" value="transporte"> Transporte gratuito<br>
-            <input type="radio" name="promocion" value="descuento"> Descuento 5%
-        </div>
-    </fieldset>
-    <input type="submit" value="Enviar">
-</form>
-
+<script src="main.js"></script>
 </body>
 </html>
